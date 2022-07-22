@@ -4,7 +4,7 @@ function getName()
 {
     return 'EXA DOOM';
 }
-version = "v3.5"
+version = "v2.0"
 
 let worldMap =
 [
