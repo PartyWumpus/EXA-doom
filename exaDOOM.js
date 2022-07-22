@@ -354,8 +354,8 @@ function menuInput(key) {
 
       case "textures":
         switch (key) {
-          case 17: currentTexture += 1;break; // up arrow
-          case 18: currentTexture -= 1;break; // down arrow
+          case keyBinds.UP: currentTexture += 1;break; // up key
+          case keyBinds.DOWN: currentTexture -= 1;break; // down key
         }
         if (currentTexture <= 0) { currentTexture = 1}
         if (currentTexture > texture.length-1) { currentTexture = texture.length-1}
