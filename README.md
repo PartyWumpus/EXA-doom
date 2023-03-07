@@ -1,8 +1,5 @@
-# LastCallBBS
-
-## EXA DOOM
-A test game with raycasting rendering
-
+# EXA DOOM
+## A Last Call BBS game with raycasting rendering
 
 ### The map can be customized by changing the worldMap variable.
 
