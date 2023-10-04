@@ -4,25 +4,21 @@ function getName()
 {
     return 'EXA DOOM';
 }
-version = "v2.0"
+version = "v3.0"
 
-/*
-let worldMap =
-[
+// each preset = {worldMap: [map array], posX: [x start pos], posY: [y start pos], name: [name of map in list]}
+presetMaps = []
+presetMaps[0] = {
+    worldMap:[
   [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
   [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-  [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-  [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-  [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-  [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
   [1,0,0,0,0,1,1,0,2,2,0,3,3,0,4,4,0,5,5,0,0,0,0,1],
   [1,0,0,0,0,1,1,0,2,2,0,3,3,0,4,4,0,5,5,0,0,0,0,1],
   [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-  [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-  [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-  [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+  [1,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,1],
+  [1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,1],
+  [1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,1],
   [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,1],
-  [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
   [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
   [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
   [1,4,4,4,4,4,4,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
@@ -33,10 +29,14 @@ let worldMap =
   [1,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
   [1,4,4,4,4,4,4,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
   [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
-];
-*/
-let worldMap =
-[
+],
+    posX: 9,
+    posY: 11.5,
+    name: "Test Map"
+},
+
+presetMaps[1] = {
+    worldMap:[
   [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
   [1,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1],
   [1,0,1,1,1,0,1,0,3,0,1,1,1,0,1,1,0,1],
@@ -46,11 +46,37 @@ let worldMap =
   [1,0,5,0,0,0,1,0,3,0,0,0,0,0,0,1,1,1],
   [1,0,0,0,1,1,1,0,0,0,0,0,0,0,0,1,1,1],
   [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
-];
+],
+    posX: 7.8,
+    posY: 11,
+    name: "Map 1"
+}
+
+presetMaps[2] = {
+    worldMap:[
+  [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+  [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+  [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+  [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+  [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+  [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+  [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+  [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+  [1,1,1,1,1,1,1,1,1,1,1,7,1,1,1,1,1,1]
+],
+    posX: 7.8,
+    posY: 11,
+    name: "Just Walls"
+}
+
 
 texWidth = 8;
 texHeight = 8;
 //texture 0 does not exist as it is empty tile
+//texture transparency only works on sprites, and is done with color 0
+// while it is possible to add transparency to walls, it would be ineffecient
+// could be possible to make exceptions for walls with transparency
+
 texture = [];
 
 texture[0] = ""
@@ -73,7 +99,7 @@ color:[
 "99999999",
 "AAAAAAAA",
 "AAAAAAAA",
-"CCCCCCCC",
+"CCCCCCCC"
 ]
 }
 
@@ -195,38 +221,126 @@ color:[
 texture[7] = {
   texture:[
 "████████",
+"█######█",
+"█#    #█",
+"█#    #█",
+"█#    #█",
+"█#    #█",
+"█#    #█",
+"█#    #█"
+],
+color:[
+"CCCCCCCC",
+"ADDDDDDA",
+"AD1111DA",
+"9D1111D9",
+"9D1111D9",
+"AD1111DA",
+"AD1111DA",
+"CD1111DC"
+]
+}
+
+texture[8] = {
+  texture:[
 "████████",
-"████████",
-"████████",
-"████████",
-"████████",
-"████████",
+" ██████ ",
+"  ████  ",
+"  ████  ",
+"  ████  ",
+"  ████  ",
+" ██████ ",
 "████████"
 ],
 color:[
-"55557777",
-"55557777",
-"55557777",
-"55557777",
-"77775555",
-"77775555",
-"77775555",
-"77775555"
+"BBBBBBBB",
+"09999990",
+"00999900",
+"00999900",
+"00999900",
+"00999900",
+"09999990",
+"BBBBBBBB"
 ]
 }
+
+texture[9] = {
+  texture:[
+"        ",
+"        ",
+"        ",
+"  ████  ",
+" ██████ ",
+" ██████ ",
+" ██████ ",
+"  ████  "
+],
+color:[
+"00000000",
+"00000000",
+"00000000",
+"00666600",
+"06666660",
+"06666660",
+"06666660",
+"00666600"
+]
+}
+
+texture[10] = {
+  texture:[
+"   ███  ",
+"   ██   ",
+"   ███  ",
+"   ██   ",
+"  ████  ",
+" ██  ██ ",
+" ██  ██ ",
+"  ████  "
+],
+color:[
+"000BBB00",
+"000BB000",
+"000BBB00",
+"000BB000",
+"00BBBB00",
+"0BB11BB0",
+"0BB11BB0",
+"00BBBB00"
+]
+}
+
+
+sprite = []
+//sprite[0] = {x:5,y:5,texture:8}
+//sprite[1] = {x:7,y:5,texture:8}
+//sprite[2] = {x:8,y:5,texture:10}
+//sprite[3] = {x:5,y:6,texture:9}
+//sprite[4] = {x:6.5,y:11.5,texture:9}
+
+
+// x, y, texture, wallX, wallY and position, although position is automatically asigned by makeKeys()
+keys = []
+//keys[0] = {x:5,y:5,texture:10,wallX:6,wallY:6}
+//makeKeys(keys)
 
 
 function onConnect()
 {
   // default values
-  startPos = [7.8, 11];
-  posX = startPos[0], posY = startPos[1];
+
   dirX = 0, dirY = -1
   planeX = -0.66, planeY = 0;
-
   frameCount = 0;
+  ZBuffer = []
+  spriteOrder = []
+  spriteDistance = []
+
   moveSpeed = 0.5;
   rotSpeed = 0.2;
+  //  moveSpeed = 0.05; very slow
+  // rotSpeed = 0.03; very slow
+
   // inMenu, inGame, inMap
   gameState = "inMenu"
   menu = "main"
@@ -235,6 +349,7 @@ function onConnect()
 
   // then load any user set values to overwrite
   loadUserInfo()
+
 
   displayStartup()
 }
@@ -264,30 +379,61 @@ titleArt =
 
 //TODO: maximum length of options = 6, if more add next button programmatically?
 
-currentTexture = 1;
-currentKeybind = "UP";
+function generateMenu(menuOptions) {
+    for (var i = 0; i < menuOptions.length; i++) {
+        drawText(menuOptions[i], 15, 10, (titleArt.length/2 + 1)+i*2)
+        drawText("["+i+"]", 17, 6, (titleArt.length/2 + 1)+i*2)
+    }
+}
+
+
 function menuView() {
   // draw titleArt
   for (var i = 0; i < titleArt.length; i+=2) {
     drawText(titleArt[i], titleArt[i+1],0, 0+i/2)
   }
   drawText("[Esc] Back", 17, 44, 8)
+
   switch (menu) {
     case "main":
-      menuOptions = ["Play Game","Keybinds","Textures","Credits"]
-      for (var i = 0; i < menuOptions.length; i++) {
-        drawText(menuOptions[i], 15, 10, (titleArt.length/2 + 1)+i*2)
-        drawText("["+i+"]", 17, 6, (titleArt.length/2 + 1)+i*2)
-      }
+      menuOptions = ["Play Game","Change Keybinds","View Textures","View Credits"]
+      generateMenu(menuOptions)
       drawText("             ", 17, 44, 8) // hide [esc] quit
       break;
 
+    case "newgame":
+      menuOptions = ["Use preset map","Use randomized map"]
+      generateMenu(menuOptions)
+      break;
+
+    case "randomizedmap":
+      if (currentOption == "Width") {menuOptions = ["Width: "+width+"█","Height: "+height]}
+      if (currentOption == "Height") {menuOptions = ["Width: "+width,"Height: "+height+"█"]}
+      generateMenu(menuOptions)
+
+        if (currentOption != "DONE") {
+          drawCenteredText("Currently setting: "+currentOption, 17, 15)
+          drawCenteredText("Type number to set value", 15, 16)
+          drawCenteredText("Press enter to continue", 15, 17)
+        } else {
+          drawCenteredText("Press enter to start", 17, 15)
+        }
+      break;
+
+    case "presetmap":
+      menuOptions = presetMaps
+        for (var i = 0; i < menuOptions.length; i++) {
+            drawText(menuOptions[i]["name"], 15, 10, (titleArt.length/2 + 1)+i*2)
+            drawText("["+i+"]", 17, 6, (titleArt.length/2 + 1)+i*2)
+    }
+      break;
+
     case "keybinds":
-        if (currentKeybind != "") {
-          drawCenteredText("Currently binding: "+currentKeybind, 17, 15)
+        if (currentOption != "DONE") {
+          drawCenteredText("Currently binding: "+currentOption, 17, 15)
           drawCenteredText("Press key to set bind", 15, 16)
         } else {
-          drawCenteredText("Binds Set."+currentKeybind, 17, 15)
+          drawCenteredText("Binds Set.", 17, 15)
         }
 
         keybindBoxes(25,8,"UP")
@@ -302,8 +448,8 @@ function menuView() {
       drawBox(10, 29, 8, texWidth+2, texHeight+2) // texture box 2
       for (var x = 0; x < texWidth; x++) { // draw the texture
         for (var y = 0; y < texHeight; y++) {
-          character = texture[currentTexture]['texture'][y][x];
-          color = parseInt(texture[currentTexture]['color'][y][x], 16) + 2;
+          character = texture[currentOption]['texture'][y][x];
+          color = parseInt(texture[currentOption]['color'][y][x], 16) + 2;
           drawText(character,color,x+16,y+9)
           drawText(character,color,x+30,y+9)
         }
@@ -312,7 +458,7 @@ function menuView() {
       drawText("00", 5, 26, 12)
       drawText("UP", 14, 26, 10)
       drawText("DOWN", 14, 25, 14)
-      drawText(currentTexture, 16, 28-String(currentTexture).length, 12)
+      drawText(currentOption, 16, 28-String(currentOption).length, 12)
       break;
 
     case "credits":
@@ -345,29 +491,71 @@ function menuInput(key) {
     switch (menu) {
       case "main":
         switch (num) {
-          case 0: gameState = "inGame";break;
-          case 1: menu = "keybinds";currentKeybind = "UP";break;
-          case 2: menu = "textures";break;
+          case 0: menu = "newgame";break;
+          case 1: menu = "keybinds";currentOption = "UP";break;
+          case 2: menu = "textures";currentOption = 1;break;
           case 3: menu = "credits";break;
         }
         updateScreen();break;
 
+      case "newgame":
+        switch (num) {
+            case 0: menu = "presetmap";break;
+          case 1: menu = "randomizedmap";currentOption = "Width";width='';height='';break;
+        }
+        updateScreen();break;
+
+      case "randomizedmap":
+          if (key == 10) { // enter key
+            switch (currentOption) {
+                case "Width": currentOption = "Height";break;
+                case "Height": currentOption = "DONE";break;
+                //case "Wall Texture": currentOption = "DONE";break;
+                case "DONE": gameState = "inMap";worldMap=mazeGenerator(width,height,1);
+                            dirX=0;dirY=1;planeX=0.66;planeY=0;posX=1.5;posY=1.5;
+                            keys[0] = {x:5,y:5,texture:10,wallX:6,wallY:6};makeKeys(keys);break;
+            }}
+          if (key == 8) { // backspace key
+            switch (currentOption) {
+                case "Width": if(width.length > 0) {width = width.slice(0, -1)};break;
+                case "Height": if(height.length > 0) {height = height.slice(0, -1)};break;
+                //case "Wall Texture": if(wallTexture.length > 0) {wallTexture = wallTexture.slice(0, -1)};break;
+            }}
+          if (num >= 0 && num <= 9) { // numbered key
+            switch (currentOption) {
+                case "Width": if(width.length < 3) {width+=num};break;
+                case "Height": if(height.length < 3) {height+=num};break;
+                //case "Wall Texture": if(wallTexture.length < 3) {wallTexture+=num};break;
+            }}
+        updateScreen();break;
+
+      case "presetmap":
+          if (num >= 0 && num < presetMaps.length) {
+              var preset = presetMaps[num]
+              worldMap = preset['worldMap']
+              posX = preset['posX']
+              posY = preset['posY']
+              gameState = 'inGame'
+          }
+          updateScreen();break;
+
       case "textures":
         switch (key) {
-          case keyBinds.UP: currentTexture += 1;break; // up key
-          case keyBinds.DOWN: currentTexture -= 1;break; // down key
+          case keyBinds.UP: currentOption += 1;break; // up arrow
+          case keyBinds.DOWN: currentOption -= 1;break; // down arrow
         }
-        if (currentTexture <= 0) { currentTexture = 1}
-        if (currentTexture > texture.length-1) { currentTexture = texture.length-1}
+        // value constraints
+        if (currentOption <= 0) { currentOption = 1}
+        if (currentOption > texture.length-1) { currentOption = texture.length-1}
         updateScreen();break;
 
       case "keybinds":
-          switch (currentKeybind) {
-            case "UP": keyBinds["UP"] = key;currentKeybind = "LEFT";break;
-            case "LEFT": keyBinds["LEFT"] = key;currentKeybind = "DOWN";break;
-            case "DOWN": keyBinds["DOWN"] = key;currentKeybind = "RIGHT";break;
-            case "RIGHT": keyBinds["RIGHT"] = key;currentKeybind = "MAP";break;
-            case "MAP": keyBinds["MAP"] = key;currentKeybind = "";saveUserInfo();break;
+          switch (currentOption) {
+            case "UP": keyBinds["UP"] = key;currentOption = "LEFT";break;
+            case "LEFT": keyBinds["LEFT"] = key;currentOption = "DOWN";break;
+            case "DOWN": keyBinds["DOWN"] = key;currentOption = "RIGHT";break;
+            case "RIGHT": keyBinds["RIGHT"] = key;currentOption = "MAP";break;
+            case "MAP": keyBinds["MAP"] = key;currentOption = "DONE";saveUserInfo();break;
         }
     }
 }
@@ -377,6 +565,14 @@ function drawCenteredText(text, color, posY) {
   drawText(text, color, (27.5 - (text.length/2)), posY)
 }
 
+function makeKeys(keys) {
+    for (i = 0; i < keys.length; i++) {
+        let temp = {x:keys[i].x, y:keys[i].y, texture:keys[i].texture};
+        keys[i].position = sprite.push(temp);
+    }
+}
+
+list = {}
 function onUpdate()
 {
 
@@ -384,11 +580,12 @@ function onUpdate()
   if (gameState == "inGame") {
 
     // animations
-    animTimer += 0.5;
-    //moveBlock('5',150,25, 21,14,19,14)
+    //time = Date.now() // faster than expected!
+    //if (time ) {
+    //    drawText(time,16,0,0)
+    //}
 
     // ui
-
   }
 
   //debug info
@@ -396,10 +593,10 @@ function onUpdate()
   //drawText(Math.floor(angle), 17, 0, 0)
 
   //drawText(Math.floor(animTimer)%150, 17, 0, 0)
-  //drawText(JSON.stringify(data), 17, 0, 0)
-
 }
 
+//maybe redo soon:tm:
+/*
 function moveBlock(tile,speed,delay,x1,y1,x2,y2) {
 
   if (animTimer % speed*2 == 0) { // every 2nd timer, make block texture 6, which is fullbright...
@@ -424,6 +621,7 @@ function moveBlock(tile,speed,delay,x1,y1,x2,y2) {
     updateScreen()
   }
 }
+*/
 
 function raycastRender() {
   screenHeight = h
@@ -552,8 +750,86 @@ function raycastRender() {
         color = parseInt(texture[texNum]['color'][texY][texX], 16) + 2; //parse color as base 16 so colors can fit into a one character space
         if(side == 1) color = color/1.3 // darken side of walls for ""lighting""
         drawText(character,color,x,y)
+        //SET THE ZBUFFER FOR THE SPRITE CASTING
+        ZBuffer[x] = perpWallDist; //perpendicular distance is used
+
     }
 }
+    numSprites = sprite.length
+    //SPRITE RENDER
+    //sort sprites from far to close
+    for(i = 0; i < numSprites; i++)
+    {
+      spriteOrder[i] = i;
+      spriteDistance[i] = ((posX - sprite[i].x) * (posX - sprite[i].x) + (posY - sprite[i].y) * (posY - sprite[i].y)); //sqrt not taken, unneeded
+    }
+
+    //TODO: MAKE THIS WORK NOW
+    //sortSprites(spriteOrder, spriteDistance, numSprites);
+
+    //after sorting the sprites, do the projection and draw them
+    for(i = 0; i < numSprites; i++)
+    {
+      //translate sprite position to relative to camera
+      spriteX = sprite[spriteOrder[i]].x - posX;
+      spriteY = sprite[spriteOrder[i]].y - posY;
+
+      //transform sprite with the inverse camera matrix
+      // [ planeX   dirX ] -1                                       [ dirY      -dirX ]
+      // [               ]       =  1/(planeX*dirY-dirX*planeY) *   [                 ]
+      // [ planeY   dirY ]                                          [ -planeY  planeX ]
+
+      invDet = 1.0 / (planeX * dirY - dirX * planeY); //required for correct matrix multiplication
+
+      transformX = invDet * (dirY * spriteX - dirX * spriteY);
+      transformY = invDet * (-planeY * spriteX + planeX * spriteY); //this is actually the depth inside the screen, that what Z is in 3D
+
+      spriteScreenX = parseInt((w / 2) * (1 + transformX / transformY));
+
+      //calculate height of the sprite on screen
+      spriteHeight = Math.abs(parseInt(h / (transformY))); //using 'transformY' instead of the real distance prevents fisheye
+      //calculate lowest and highest pixel to fill in current stripe
+      drawStartY = parseInt(-spriteHeight / 2 + h / 2);
+      if(drawStartY < 0) {drawStartY = 0};
+      drawEndY = parseInt(spriteHeight / 2 + h / 2)+1; // textures were drawing unevenly, this is the bad fix :)
+      if(drawEndY >= h) {drawEndY = h - 1};
+
+      //calculate width of the sprite
+      spriteWidth = Math.abs( parseInt(h / (transformY)));
+      drawStartX = parseInt(-spriteWidth / 2 + spriteScreenX);
+      if(drawStartX < 0) {drawStartX = 0};
+      drawEndX = parseInt(spriteWidth / 2 + spriteScreenX)+1; // textures were drawing unevenly, this is the bad fix :)
+      if(drawEndX >= w) {drawEndX = w - 1};
+
+      //loop through every vertical stripe of the sprite on screen
+      for(stripe = drawStartX; stripe < drawEndX; stripe++)
+      {
+        texX = parseInt((stripe - (-spriteWidth / 2 + spriteScreenX)) * texWidth / spriteWidth);
+        //the conditions in the if are:
+        //1) it's in front of camera plane so you don't see things behind you
+        //2) it's on the screen (left)
+        //3) it's on the screen (right)
+        //4) ZBuffer, with perpendicular distance
+        if(transformY > 0 && stripe > 0 && stripe < w && transformY < ZBuffer[stripe])
+        for(y = drawStartY; y < drawEndY; y++) //for every pixel of the current stripe
+        {
+          d = parseInt(y * 256 - h * 128 + spriteHeight * 128); //256 and 128 factors to avoid floats
+          texY = parseInt(((d * texHeight) / spriteHeight) / 256);
+
+          if (texX < 0) {texX = 0}
+          if (texX >= texWidth) {texX = texWidth-1}
+          if (texY < 0) {texY = 0}
+          if (texY >= texWidth) {texY = texWidth-1}
+
+          texNum =sprite[spriteOrder[i]].texture
+        character = texture[texNum]['texture'][texY][texX];
+        color = parseInt(texture[texNum]['color'][texY][texX], 16) + 2; //parse color as base 16 so colors can fit into a one character space
+        if (color != 2) {
+            drawText(character,color,stripe,y)
+           }
+        }
+      }
+    }
 }
 
 function onInput(key)
@@ -654,7 +930,7 @@ function updateScreen() {
   frameCount += 1;
   w = 56;
   h = 21;
-  if (gameState == "inGame") {raycastRender();} // if inGame, render the game (wow)
+  if (gameState == "inGame") {raycastRender();} // if inGame, render the game
   if (gameState == "inMap") {mapView();} // if inMap, render the map
   if (gameState == "inMenu") {menuView(menu);} // if inMenu, render the current menu
   //TODO: make a minimap
@@ -674,76 +950,108 @@ function loadUserInfo() {
         data = JSON.parse(data);
         keyBinds = JSON.parse(data.keyBinds);
     }
-    }
-
-// doesn't look very good, i think i've done something wrong.
-// kind of hard to tell though :(
-/*
-function floorRenderer() {
-for(y = 0; y < h; y++)
-    {
-      // rayDir for leftmost ray (x = 0) and rightmost ray (x = w)
-      rayDirX0 = dirX - planeX;
-      rayDirY0 = dirY - planeY;
-      rayDirX1 = dirX + planeX;
-      rayDirY1 = dirY + planeY;
-
-      // Current y position compared to the center of the screen (the horizon)
-      p = parseInt(y - screenHeight / 2);
-
-      // Vertical position of the camera.
-      posZ = 0.5 * screenHeight;
-
-      // Horizontal distance from the camera to the floor for the current row.
-      // 0.5 is the z position exactly in the middle between floor and ceiling.
-      rowDistance = posZ / p;
-
-      // calculate the real world step vector we have to add for each x (parallel to camera plane)
-      // adding step by step avoids multiplications with a weight in the inner loop
-      floorStepX = rowDistance * (rayDirX1 - rayDirX0) / screenWidth;
-      floorStepY = rowDistance * (rayDirY1 - rayDirY0) / screenWidth;
-
-      // real world coordinates of the leftmost column. This will be updated as we step to the right.
-      floorX = posX + rowDistance * rayDirX0;
-      floorY = posY + rowDistance * rayDirY0;
-
-      for(x = 0; x < screenWidth; ++x)
-      {
-        // the cell coord is simply got from the integer parts of floorX and floorY
-        cellX = parseInt(floorX);
-        cellY = parseInt(floorY);
-
-        // get the texture coordinate from the fractional part
-        tx = parseInt(texWidth * (floorX - cellX));
-        if (isNaN(tx)) {tx = 0} // fix bug where crash on NaN
-        if (tx > texWidth-1) {tx = texWidth-1} // avoid overflow
-        if (tx < 0) { tx = 0 }// avoid underflow
-
-        ty = parseInt(texHeight * (floorY - cellY));
-        if (isNaN(ty)) {ty = 0} // fix bug where crash on NaN
-        if (ty > texHeight-1) {ty = texHeight-1}// avoid overflow
-        if (ty < 0) { ty = 0 }// avoid underflow
-
-
-        floorX += floorStepX;
-        floorY += floorStepY;
-
-        // choose texture and draw the pixel
-        floorTexture = 7;
-        ceilingTexture = 6;
-
-        character = texture[floorTexture]['texture'][ty][tx];
-        color = parseInt(texture[floorTexture]['color'][ty][tx], 16) + 2; //parse color as base 16 so colors can fit into a one character space
-        //color = 3
-        //if (ty > texHeight) { color = 17 }
-        drawText(character,color,x,y)
-
-
-        //ceiling (symmetrical, at screenHeight - y - 1 instead of y)
-        //color = texture[ceilingTexture][texWidth * ty + tx];
-        //color = (color >> 1) & 8355711; // make a bit darker
-        //buffer[screenHeight - y - 1][x] = color;
-      }
-    }
 }
-*/
+
+
+
+//
+// MAZE GENERATOR
+// BASED OFF CODE BY JAMIS BUCK
+// http://weblog.jamisbuck.org/2010/12/27/maze-generation-recursive-backtracking
+//
+
+// used in maze generation
+DX = {E:1,W:-1,N:0,S:0}
+DY = {E:0,W:0,N:-1,S:1}
+OPPOSITE = {E:"W",W:"E",N:"S",S:"N"}
+
+function mazeGenerator(width,height,wall) {
+    width = parseInt(width);height = parseInt(height);wall=parseInt(wall)
+    // make empty grid
+    grid = [];
+      for (i = 0; i < height; i++) {
+        temp = []
+        for (v = 0; v < width; v++) {
+            array = []
+            temp.push(array)
+        }
+        grid.push(temp);
+    }
+
+
+    // make maze
+    // start in center
+    grid = carve_passage_from(0,0,grid,width, height)
+
+    // make grid in my style
+    gameGrid = [];
+    for (y = 0; y <= height*2; y++) {
+        temp = []
+        for (x = 0; x < width*2; x++) {
+
+            if (x % 2 == 1 & y % 2 == 1) {// every other tile (x and y) = wall
+                temp[x] = 0
+
+            } else {temp[x] = wall} // all other tiles = empty
+
+            if (y == 0 | y == height*2) { // if top row or bottom row, tile = wall
+                temp[x] = wall;
+            }
+            }
+        temp[0] = wall; //left edge = wall
+        temp[width*2] = wall; //right edge = wall
+        gameGrid.push(temp);
+        }
+
+    // make gameGrid into maze using grid
+    for (y = 0; y < height; y++) {
+        for (x = 0; x < width; x++) {
+            for (i = 0; i < grid[y][x].length; i++) {
+                direction = grid[y][x][i]
+                var nx = x*2 + DX[direction] + 1
+                var ny = y*2 + DY[direction] + 1
+                gameGrid[ny][nx] = 0
+            }
+        }
+    }
+    return gameGrid
+}
+
+function carve_passage_from(cx, cy, grid,width, height) {
+    var directions = shuffle(["N","S","E","W"]);
+    for (var i = 0; i < 4; i++) { // repeat for mazeGeneratorall directions
+        var direction = directions[i]
+
+        var nx = cx + DX[direction]
+        var ny = cy + DY[direction]
+
+        // if within borders and if the tile is empty
+        if ((nx >= 0 && nx < width) && (ny >= 0 && ny < height) && (grid[ny][nx] == "")) {
+            grid[cy][cx].push(direction)
+            grid[ny][nx].push(OPPOSITE[direction])
+            carve_passage_from(nx, ny, grid,width, height)
+        }
+    }
+    return grid;
+}
+
+function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex != 0) {
+
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+
+    temp = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temp
+  }
+
+  return array;
+}
+
