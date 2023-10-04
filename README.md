@@ -1,4 +1,7 @@
 # EXA DOOM
+
+![](docs/exadoom.mp4)
+
 ## A Last Call BBS game with raycasting rendering
 
 ### The map can be customized by changing the worldMap variable.
