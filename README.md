@@ -1,6 +1,6 @@
 # EXA DOOM
 
-![](docs/exadoom.webm)
+https://github.com/PartyWumpus/EXA-doom/assets/48649272/caf42869-f9e3-4c2d-9874-2c92d08addd4
 
 ## A Last Call BBS game with raycasting rendering
 
