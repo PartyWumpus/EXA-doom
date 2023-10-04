@@ -1,6 +1,6 @@
 # EXA DOOM
 
-![](docs/exadoom.mp4)
+![](docs/exadoom.webm)
 
 ## A Last Call BBS game with raycasting rendering
 
