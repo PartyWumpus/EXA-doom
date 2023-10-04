@@ -1,5 +1,5 @@
 // by PartyWumpus, feel free to modify :D
-// most of the code from lodev.org/cgtutor/raycasting.html
+// with great help from lodev.org/cgtutor/raycasting.html
 function getName()
 {
     return 'EXA DOOM';
@@ -362,7 +362,6 @@ function displayStartup() {
   drawCenteredText("lodev.org/cgtutor/raycasting.html", 10, 9)
   drawCenteredText("(it was written in c++ D:)", 5, 10)
 
-  //drawCenteredText("Use the arrow keys to move", 17, 12)
   drawCenteredText("Press any key to continue", 17, 13)
 }
 
